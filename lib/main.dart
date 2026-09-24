@@ -74,6 +74,186 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+                Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
+              Card(
+                elevation: 5,
+                child: ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Aji"),
+                  subtitle: Text("Hai"),
+                  trailing: Text(
+                    "50",
+                    style: TextStyle(color: Colors.green),
+                  ),
+                ),
+              ),
             ],
           ),
           
