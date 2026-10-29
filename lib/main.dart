@@ -45,105 +45,30 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: TabBarView(
           children: [
-            ListView(
-              children: const [
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Aji'),
-                    subtitle: Text('Hai, apa kabar?'),
-                    trailing: Text('2', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Fathir'),
-                    subtitle: Text('Jangan lupa tugas besok'),
-                    trailing: Text('1', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Nabila'),
-                    subtitle: Text('Terima kasih ya!'),
-                    trailing: Text('5', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Siti'),
-                    subtitle: Text('Nanti kita belajar bersama'),
-                    trailing: Text('1', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Raka'),
-                    subtitle: Text('Aku sudah sampai'),
-                    trailing: Text('3', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Dimas'),
-                    subtitle: Text('Oke, sampai jumpa'),
-                    trailing: Text('1', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Putri'),
-                    subtitle: Text('Boleh kirim catatannya?'),
-                    trailing: Text('4', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Rizky'),
-                    subtitle: Text('Siap, nanti aku kabari'),
-                    trailing: Text('2', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Andi'),
-                    subtitle: Text('Terima kasih atas bantuannya'),
-                    trailing: Text('1', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Citra'),
-                    subtitle: Text('Sampai ketemu besok'),
-                    trailing: Text('6', style: TextStyle(color: Colors.green)),
-                  ),
-                ),
-                Card(
-                  elevation: 5,
-                  child: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text('Budi'),
-                    subtitle: Text('Baik, aku mengerti'),
-                    trailing: Text('1', style: TextStyle(color: Colors.green)),
+            Column(
+              children: [
+                InkWell(
+                  onTap: () {
+                    print("Chat ditekan");
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DetailChat(),
+                      ),
+                    );
+                  },
+                  child: Card(
+                    elevation: 30,
+                    child: ListTile(
+                      leading: Icon(Icons.person),
+                      title: Text(
+                        "Aji",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      subtitle: Text("Hai, apa kabar?"),
+                      trailing: Text("12.30"),
+                    ),
                   ),
                 ),
               ],
@@ -176,11 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   subtitle: Text("Ketuk untuk menambahkan pembaruan status"),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 8,
-                  ),
-                  child: const Text(
+                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: Text(
                     'Pembaruan terkini',
                     style: TextStyle(
                       color: Colors.grey,
@@ -250,6 +172,18 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class DetailChat extends StatelessWidget {
+  const DetailChat({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Aji')),
+      body: const Center(child: Text('Chat dengan Aji')),
     );
   }
 }
