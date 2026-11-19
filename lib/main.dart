@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'WhatsApp',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const MyHomePage(title: 'WhatsApp'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ListTile(
                       leading: Icon(Icons.person),
                       title: Text(
-                        "Aji",
+                        "Rivaldy",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       subtitle: Text("Hai, apa kabar?"),
@@ -121,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                   title: Text(
-                    "Aji",
+                    "Rivaldy",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text("Hari ini, 08.20"),
@@ -155,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Icon(Icons.person, color: Colors.white),
                   ),
                   title: Text(
-                    "Aji",
+                    "Rivaldy",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Row(
@@ -176,14 +177,136 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class DetailChat extends StatelessWidget {
+class DetailChat extends StatefulWidget {
   const DetailChat({super.key});
+
+  @override
+  State<DetailChat> createState() => _DetailChatState();
+}
+
+class _DetailChatState extends State<DetailChat> {
+  final TextEditingController textPesan = TextEditingController();
+  final List<Pesan> _pesan = [
+    const Pesan(text: 'Hai, apa kabar?', isMe: false),
+    const Pesan(text: 'Baik, kamu?', isMe: true),
+  ];
+
+  void kirimPesan() {
+    final isiPesan = textPesan.text.trim();
+
+    if (isiPesan.isEmpty) return;
+
+    setState(() {
+      _pesan.add(Pesan(text: isiPesan, isMe: true));
+      textPesan.clear();
+    });
+
+    Future.delayed(const Duration(seconds: 1), () {
+      if (!mounted) return;
+
+      setState(() {
+        _pesan.add(const Pesan(text: 'Okee, Siap!', isMe: false));
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    textPesan.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Aji')),
-      body: const Center(child: Text('Chat dengan Aji')),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 120, 76, 175),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        title: Row(
+          children: const [
+            CircleAvatar(
+              backgroundColor: Colors.grey,
+              child: Icon(Icons.person, color: Colors.white),
+            ),
+            SizedBox(width: 8),
+            Text("Rivaldy"),
+          ],
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.videocam),
+            onPressed: () {
+              // Logika untuk melakukan panggilan
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.call),
+            onPressed: () {
+              // Logika untuk melakukan panggilan video
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.more_vert),
+            onPressed: () {
+              // Logika untuk menampilkan menu opsi
+            },
+          ),
+        ],
+      ),
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: _pesan.length,
+              itemBuilder: (context, index) {
+                final psn = _pesan[index];
+                return Align(
+                  alignment: psn.isMe
+                      ? Alignment.centerRight
+                      : Alignment.centerLeft,
+                  child: Container(
+                    margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.green[50],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(psn.text),
+                  ),
+                );
+              },
+              padding: EdgeInsets.all(20),
+            ),
+          ),
+
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Row(
+              children: [
+                Expanded(child: TextField(controller: textPesan)),
+                IconButton(
+                  onPressed: () {
+                    kirimPesan();
+                  },
+                  icon: Icon(Icons.send),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
+}
+
+class Pesan {
+  const Pesan({required this.text, required this.isMe});
+
+  final String text;
+  final bool isMe;
 }
